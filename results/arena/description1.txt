@@ -1,0 +1,9 @@
+Ship arrival: ERLA(60, 3)
+Route to Pier Align: 20
+Delay: EXPO( 30 )
+berthing Pier 1: 45
+berthing Pier 2: 45
+Pier 1 Loading time: EXPO(180)
+Pier 2 Loading time: EXPO(180)
+deberthing Pier 1: 30
+deberthing Pier 2: 30
