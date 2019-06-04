@@ -47,7 +47,7 @@ left_CI = bar_X - tinv(0.95,9)*(var(Xs)/10)^0.5
 right_CI = bar_X + tinv(0.95,9)*(var(Xs)/10)^0.5
 
 %%%%%% Average delay plots
-file = 'simpy_results10.csv'; 
+file = 'simpy_results13.csv'; 
 delay_data = csvread(file,1,0); 
 time = delay_data(:,1)/60; % time stamp when throughput increases by 1
 delaytime = delay_data(:,2);
