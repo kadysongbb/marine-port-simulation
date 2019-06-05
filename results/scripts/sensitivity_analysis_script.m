@@ -1,23 +1,33 @@
 %%%%%%% Operation Error Scenario %%%%%%%%
 %%% average delay vs different berthing time
 figure();
+t = [45 67.5 90 112.5 135];
 avg_delay_time = [4.3270 8.4500 11.0188 19.3182 35.0194];
-plot([45 67.5 90 112.5 135], avg_delay_time, '-s','LineWidth',2, 'MarkerSize',10,...
+plot(t, avg_delay_time, '-s','LineWidth',2, 'MarkerSize',10,...
     'MarkerEdgeColor','red',...
-    'MarkerFaceColor',[1 .6 .6]); 
-set(gca, 'FontSize',18);
-xticks([45 67.5 90 112.5 135]);
+    'MarkerFaceColor',[1 .6 .6]); hold on;
+p = polyfit(t,avg_delay_time,2);
+t1 = 45:0.1:135;
+y1 = polyval(p,t1);
+plot(t1, y1 ,'--g','LineWidth',1); 
+set(gca, 'FontSize',18); legend('actual data', 'fitted polynomial');
+xticks(t);
 ylabel('Steady state delay mean (Minutes)'); 
 xlabel('Berthing time mean (Minutes)');
 title('Steady state delay mean vs berthing time mean');
 
 %%% average delay vs different unloading time
 figure();
+t = [120 150 180 210 240];
 avg_delay_time = [4.3270 9.6910 25.3338 53.9302 92.6978];
-plot([120 150 180 210 240], avg_delay_time, '-s','LineWidth',2, 'MarkerSize',10,...
+plot(t, avg_delay_time, '-s','LineWidth',2, 'MarkerSize',10,...
     'MarkerEdgeColor','red',...
-    'MarkerFaceColor',[1 .6 .6]); 
-set(gca, 'FontSize',18);
+    'MarkerFaceColor',[1 .6 .6]); hold on;
+p = polyfit(t,avg_delay_time,2);
+t2 = 120:0.1:240;
+y2 = polyval(p,t2);
+plot(t2, y2 ,'--g','LineWidth',1); 
+set(gca, 'FontSize',18); legend('actual data', 'fitted polynomial');
 xticks([120 150 180 210 240]);
 ylabel('Steady state delay mean (Minutes)'); 
 xlabel('Loading time mean (Minutes)');
