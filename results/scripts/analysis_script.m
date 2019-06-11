@@ -22,7 +22,7 @@ while true
     prev_time = cur_time; cur_time = time(i); i = i + 1;
 end
 
-figure('Position', [0 0 900 300]); subplot(1,2,1);
+figure('Position', [0 0 1200 300]); subplot(1,2,1);
 avg_hourly_tp = mean(hourly_tp, 2);
 plot(linspace(1,simulation_time,simulation_time),  ...
     avg_hourly_tp, 'LineWidth', 1.5);
@@ -38,7 +38,7 @@ line([50 50],[0 0.8],'Color','red','LineStyle','--');
 text(60,0.1,'warm up period L = 50','Color',...
     [0.8500 0.3250 0.0980],'FontSize',15); 
 xlim([0 simulation_time]);  ylim([0 0.8]); set(gca, 'FontSize',15); 
-title('Moving average with window size 20');
+xlabel('Hour'); title('Moving average with window size 20');
 
 % warm up time L = 50
 Xs = mean(hourly_tp(51:simulation_time,:),1);
