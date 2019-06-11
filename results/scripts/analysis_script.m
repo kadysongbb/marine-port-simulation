@@ -37,7 +37,8 @@ plot(linspace(1,simulation_time,simulation_time),  ...
 line([50 50],[0 0.8],'Color','red','LineStyle','--'); 
 text(60,0.1,'warm up period L = 50','Color',...
     [0.8500 0.3250 0.0980],'FontSize',15); 
-xlim([0 simulation_time]);  ylim([0 0.8]); set(gca, 'FontSize',15); 
+xlim([0 simulation_time]);  ylim([0 0.8]); set(gca, 'FontSize',15);
+ylabel('Hourly throughput');
 xlabel('Hour'); title('Moving average with window size 20');
 
 % warm up time L = 50
